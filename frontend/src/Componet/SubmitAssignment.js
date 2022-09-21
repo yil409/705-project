@@ -8,33 +8,31 @@ const style = {
     border: "solid 1px #ddd",
     background: "#405cf5",
     color: "#fff",
-    borderRadius: "6px",
-    cursor: "pointer",
+    borderRadius: "6px"
   };
 
 
-
-function StartAssignment () {
+function SubmitAssignment () {
 
     return (
         <>
-            
+                
                 <Rnd
                     style={style}
                     bounds="parent"
                     default={{
-                    x: 280,
-                    y: 20,
+                    x: 10,
+                    y: 80,
                     width: '12vw',
                     height: '44px'
                     }}
                 >
-                    Start Assignment
+                    Submit Assignment
                 </Rnd>
-           
+            
         </>
 
     );
 }
 
-export default StartAssignment
+export default SubmitAssignment

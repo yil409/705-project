@@ -10,7 +10,7 @@ function App() {
          <MainArea/>
     </div>
     <div className="rightSide">
-          <p>hello world2!</p>
+          <p>Instruction</p>
     </div>
 
     </main>
