@@ -17,4 +17,3 @@ npm start
 ```
 
 Open [localhost:3000](https://localhost:3000) to view the project.
-Create your own account through the login page and start using your personal start up page!
