@@ -8,17 +8,17 @@ import SubmitAssignment from './SubmitAssignment';
 
 
 function MainArea () {
-    const [isShown, setIsShown] = useState(false);
+    //const [isShown, setIsShown] = useState(false);
 
-    const handleClick = event => {
-      setIsShown(true);
-    };
+    //const handleClick = event => {
+    // setIsShown(true);
+    //};
 
     return(
         <>
           <div className="assignmentPage">
             
-            <div className="startAssignment"  onClick={handleClick} >
+            <div className="startAssignment"  /*onClick={handleClick} */>
                 <StartAssignment />
             </div>
 
@@ -57,12 +57,12 @@ function MainArea () {
                 <p>Submit the slides and video by the due date. &nbsp;</p>
             </div>
           
-                    {isShown && (
-                        <div className="fileUploadArea">
-                        <FileUpload />
-                        <SubmitAssignment/>
-                        </div>
-                    )}
+                    
+                <div className="fileUploadArea">
+                <FileUpload />
+                <SubmitAssignment/>
+                </div>
+                    
 
                 
             

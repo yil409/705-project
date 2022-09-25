@@ -24,21 +24,21 @@ main{
 }
 
 .fileUploadArea{
-  width:30vw;
+  width:95%;
   height: 150px;
-  border: 1px solid gray;
+  border: 1px dashed lightgray;
   padding: 20px;
 }
 .title{
   width: 28vw;
   height: 120px;
-  /*border: 1px solid rebeccapurple;*/
+  border: 1px solid transparent;
 }
 .startAssignment{
   float: right;
   width: 31vw;
   height: 150px;
-  /*border: 1px solid hotpink;*/
+  border: 1px dashed lightgray;
 }
 
 .rightSide{
