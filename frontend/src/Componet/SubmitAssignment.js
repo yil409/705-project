@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Rnd }  from 'react-rnd';
 
 const style = {
@@ -8,24 +8,37 @@ const style = {
     border: "solid 1px #ddd",
     background: "#405cf5",
     color: "#fff",
-    borderRadius: "6px"
+    borderRadius: "6px",
+    cursor: "pointer",
   };
 
 
 function SubmitAssignment () {
 
+    const [submitInfo, setSubmitInfo] = useState({
+        width: '200px',
+        height: '50px',
+        x: 10,
+        y: 80
+    });
+
     return (
         <>
-                
                 <Rnd
                     style={style}
-                    bounds="parent"
-                    default={{
-                    x: 10,
-                    y: 80,
-                    width: '12vw',
-                    height: '44px'
+                    size={{ width: submitInfo.width, height: submitInfo.height }}
+                    position={{ x: submitInfo.x, y: submitInfo.y }}
+                    onDragStop={(e, d) => {
+                        setSubmitInfo({...submitInfo, x: d.x, y: d.y });
                     }}
+                    onResizeStop={(e, direction, ref, delta, position) => {
+                        setSubmitInfo({
+                        width: ref.style.width,
+                        height: ref.style.height,
+                        ...position
+                        });
+                    }}
+                    bounds="parent"
                 >
                     Submit Assignment
                 </Rnd>

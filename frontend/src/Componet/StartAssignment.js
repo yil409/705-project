@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Rnd }  from 'react-rnd';
 
 const style = {
@@ -12,61 +12,38 @@ const style = {
     cursor: "pointer",
   };
 
-  class StartAssignment extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        width: 200,
-        height: 50,
+  function StartAssignment () {
+    
+    const [startInfo, setStartInfo] = useState({
+        width: '200px',
+        height: '50px',
         x: 10,
         y: 10
-      };
-    }
-  
-    render() {
+    });
+    
       return (
+
         <Rnd
           style={style}
-          size={{ width: this.state.width, height: this.state.height }}
-          position={{ x: this.state.x, y: this.state.y }}
+          size={{ width: startInfo.width, height: startInfo.height }}
+          position={{ x: startInfo.x, y: startInfo.y }}
           onDragStop={(e, d) => {
-            this.setState({ x: d.x, y: d.y });
+            setStartInfo({...startInfo, x: d.x, y: d.y });
           }}
           onResizeStop={(e, direction, ref, delta, position) => {
-            this.setState({
+            setStartInfo({
               width: ref.style.width,
               height: ref.style.height,
               ...position
             });
           }}
+          bounds="parent"
         >
-          Rnd
+          Start Assignment
         </Rnd>
+        
       );
-    }
+    
   }
-
-//function StartAssignment () {
-
- //   return (
- //       <>
-            
-  //              <Rnd
- //                   style={style}
-  //                  bounds="parent"
- //                   default={{
-  //                  x: 280,
-  //                  y: 20,
-  //                  width: '12vw',
-  //                  height: '44px'
-  //                  }}
-  //              >
-   //                 Start Assignment
-  //              </Rnd>
-           
-  //      </>
-
-  //  );
-//}
 
 export default StartAssignment

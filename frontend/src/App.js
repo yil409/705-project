@@ -6,16 +6,13 @@ function App() {
   return (
    
     <main>
-    <div className="main">
-         <MainArea/>
-    </div>
-    <div className="rightSide">
-          <p>Instruction</p>
-    </div>
+
+      <MainArea/> 
 
     </main>
 
   );
 }
+
 
 export default App;
