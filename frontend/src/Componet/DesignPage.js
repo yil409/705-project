@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
+import { Link } from "react-router-dom";
 import '.././App.css';
 import FileUpload from './UploadFile';
 import StartAssignment from './StartAssignment';
 import SubmitAssignment from './SubmitAssignment';
-import Countdown from './CountdownTimer';
 
 
 
 
-function MainArea () {
+
+function DesignPage () {
     //const [isShown, setIsShown] = useState(false);
 
     //const handleClick = event => {
@@ -19,7 +20,7 @@ function MainArea () {
     return(
         <>
 
-            <div className="main">
+            
                 <div className="assignmentPage">
                     
                     <div className="startAssignment"  /*onClick={handleClick} */>
@@ -71,16 +72,17 @@ function MainArea () {
                         
                     
                 </div>
-            </div>         
-            <div className="rightSide">
-                 <Countdown/>
-            </div>
+                
+                
+                <Link to="/popup">NEXTPAGE</Link>
+                
+            
         </>
     )
         
 }
 
-export default MainArea
+export default DesignPage
 
 
   
