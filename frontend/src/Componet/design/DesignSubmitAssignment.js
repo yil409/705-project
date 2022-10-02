@@ -6,7 +6,7 @@ const style = {
     alignItems: "center",
     justifyContent: "center",
     border: "solid 1px #ddd",
-    background: "#405cf5",
+    background: "#00457C",
     color: "#fff",
     borderRadius: "6px",
     cursor: "pointer",
@@ -19,7 +19,7 @@ function SubmitAssignment () {
         width: '200px',
         height: '50px',
         x: 10,
-        y: 80
+        y: 10
     });
 
     return (

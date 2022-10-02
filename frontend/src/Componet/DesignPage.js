@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from 'antd';
 import { Link } from "react-router-dom";
-import '.././App.css';
-import FileUpload from './UploadFile';
-import StartAssignment from './StartAssignment';
-import SubmitAssignment from './SubmitAssignment';
+import '.././Css/Design.css';
+import UploadButton from './design/DesignUploadButton';
+import StartAssignment from './design/DesignStartAssignment';
+import SubmitAssignment from './design/DesignSubmitAssignment';
 
 
 
@@ -41,9 +40,7 @@ function DesignPage () {
                     
                     <div className="description">
                         <p>First, please read the &nbsp;<a href="https://canvas.auckland.ac.nz/courses/72023/pages/overview-of-the-course-group-project" >Course Group Project Overview</a>.</p>
-                        <p>In this assignment, you will record a video of your group presenting your plan for mini research project. You can choose from&nbsp;a range of&nbsp;<a href="https://canvas.auckland.ac.nz/courses/72023/pages/project-topics-2022" >project topics</a>. You will work on the same project throughout the course in group of 6 classmates. &nbsp;</p>
-                        <p>Project plan presentation.</p>
-                        <p>This project plan consists of an 8-minute presentation. Participation of all group members is compulsory. The presentation should cover:</p>
+                        <p>In this assignment, you will record a video of your group presenting your plan for mini research project. You can choose from&nbsp;a range of&nbsp;<a href="https://canvas.auckland.ac.nz/courses/72023/pages/project-topics-2022" >project topics</a>. You will work on the same project throughout the course in group of 6 classmates. &nbsp;Project plan presentation.&nbsp;This project plan consists of an 8-minute presentation. Participation of all group members is compulsory. The presentation should cover:</p>
                         <ol>
                         <li>The context and motivation for your project.</li>
                         <li>The research question.</li>
@@ -57,14 +54,14 @@ function DesignPage () {
                         </li>
                         <li>The expected results and the contribution of the research.</li>
                         </ol>
-                        <p>It's expected that the precise nature of your group implementation and your evaluation study will vary considerably depending on the nature of the project.&nbsp;</p>
                         <p>By the time of this presentation, your group should have ensured the feasibility of the implementation of your project. For the rough plan for your implementation, please do&nbsp; "feasibility studies", e.g. touched (downloaded, checked) technologies and confirmed that interactions work. This can be in the form of what is often referred to as an architectural spike. For the evaluation study you should have developed a full draft, even if you don't present it fully in this presentation.</p>
-                        <p>Submit the slides and video by the due date. &nbsp;</p>
+                        <p> Submit the slides and video by the due date. &nbsp;</p>
                     </div>
-                
-                            
+
                         <div className="fileUploadArea">
-                        <FileUpload />
+                        <UploadButton/>
+                        </div>
+                        <div className="fileUploadArea">
                         <SubmitAssignment/>
                         </div>
                             
@@ -73,8 +70,9 @@ function DesignPage () {
                     
                 </div>
                 
-                
+                <div className="nextpageButton">
                 <Link to="/popup">NEXTPAGE</Link>
+                </div>
                 
             
         </>

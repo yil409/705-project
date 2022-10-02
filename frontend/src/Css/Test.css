@@ -1,0 +1,51 @@
+
+.TestPage{
+    display: flex;
+    
+}
+.mainArea{
+    float: left;
+    width: 85vw;
+    padding: 30px;
+    /*border: 1px dodgerblue solid;*/
+    border: 1px solid teal;
+    height: auto;
+}
+.rightSideArea{
+    width: 15vw;
+    padding: 20px;
+    border: 1px palevioletred solid;
+    min-height: 80vh;
+}
+
+
+/*Countdown Timer*/
+.countdown{
+    background-color: rgba(255, 255, 255, 0.637);
+}
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.timer {
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    color: #aaa;
+}
+
+.value {
+    font-size: 40px;
+}
+
+.info {
+    max-width: 360px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 16px;
+}

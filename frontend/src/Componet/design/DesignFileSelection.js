@@ -6,15 +6,15 @@ const style = {
     alignItems: "center",
     justifyContent: "center",
     border: "solid 1px #ddd",
-    background: "#405cf5",
+    background: "#00457C",
     color: "#fff",
     borderRadius: "6px",
     cursor: "pointer",
   };
 
-  function StartAssignment () {
+  function FileSelection () {
     
-    const [startInfo, setStartInfo] = useState({
+    const [confirmInfo, setConfirmInfo] = useState({
         width: '200px',
         height: '50px',
         x: 10,
@@ -25,13 +25,13 @@ const style = {
 
         <Rnd
           style={style}
-          size={{ width: startInfo.width, height: startInfo.height }}
-          position={{ x: startInfo.x, y: startInfo.y }}
+          size={{ width: confirmInfo.width, height: confirmInfo.height }}
+          position={{ x: confirmInfo.x, y: confirmInfo.y }}
           onDragStop={(e, d) => {
-            setStartInfo({...startInfo, x: d.x, y: d.y });
+            setConfirmInfo({...confirmInfo, x: d.x, y: d.y });
           }}
           onResizeStop={(e, direction, ref, delta, position) => {
-            setStartInfo({
+            setConfirmInfo({
               width: ref.style.width,
               height: ref.style.height,
               ...position
@@ -39,11 +39,11 @@ const style = {
           }}
           bounds="parent"
         >
-          Start Assignment
+          Confirm
         </Rnd>
         
       );
     
   }
 
-export default StartAssignment
+export default FileSelection
