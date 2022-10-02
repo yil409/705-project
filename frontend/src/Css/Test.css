@@ -3,20 +3,22 @@
     display: flex;
     
 }
-.mainArea{
-    float: left;
-    width: 85vw;
-    padding: 30px;
-    /*border: 1px dodgerblue solid;*/
-    border: 1px solid teal;
-    height: auto;
-}
+
 .rightSideArea{
     width: 15vw;
     padding: 20px;
-    border: 1px palevioletred solid;
-    min-height: 80vh;
+    border: 1px transparent solid;
+    height: auto;
 }
+
+button {
+    border: solid 1px #ddd;
+    background: #00457C;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 
 
 /*Countdown Timer*/

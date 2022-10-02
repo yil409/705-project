@@ -10,11 +10,7 @@ import SubmitAssignment from './design/DesignSubmitAssignment';
 
 
 function DesignPage () {
-    //const [isShown, setIsShown] = useState(false);
-
-    //const handleClick = event => {
-    // setIsShown(true);
-    //};
+    
 
     return(
         <>
@@ -22,7 +18,7 @@ function DesignPage () {
             
                 <div className="assignmentPage">
                     
-                    <div className="startAssignment"  /*onClick={handleClick} */>
+                    <div className="startAssignment" >
                         <StartAssignment />
                     </div>
 
@@ -64,14 +60,12 @@ function DesignPage () {
                         <div className="fileUploadArea">
                         <SubmitAssignment/>
                         </div>
-                            
-
-                        
+  
                     
                 </div>
                 
                 <div className="nextpageButton">
-                <Link to="/popup">NEXTPAGE</Link>
+                <Link to="/popup" style={{color: "white"}}>NEXTPAGE</Link>
                 </div>
                 
             

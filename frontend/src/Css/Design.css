@@ -1,10 +1,10 @@
 
 .assignmentPage{
     float: left;
-    width: 85vw;
+    width: 80%;
     padding: 30px;
     /*border: 1px dodgerblue solid;*/
-    border: 1px solid teal;
+    border: 1px solid transparent;
     height: auto;
   }
 .fileUploadArea {
@@ -28,13 +28,14 @@
   
 
 .nextpageButton{
-    margin-top: 30px;
     display:flex;
     align-items: center;
     justify-content: center;
-    float: right;
     width: 6vw;
     height: 3vw;
-    border: 1px dodgerblue solid;
+    background-color: forestgreen;
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
 }
 

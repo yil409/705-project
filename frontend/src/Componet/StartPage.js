@@ -8,9 +8,10 @@ export default function StartPage() {
         <>
 
             <main>
-                <h1> This is start page </h1>
                 
-                <Link to="/design">START</Link>
+                <h1> This is the start page </h1>
+                
+                <Link to="/design" >START</Link>
                 
             </main>
         </>

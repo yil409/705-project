@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import '.././Css/Design.css';
 
 
 export default function ResultPage() {
@@ -8,7 +9,8 @@ export default function ResultPage() {
 
             <h1> This is the result page </h1>
             
-            <Link to="/">Retry</Link>
+            <div className="nextpageButton"><Link to="/" style={{color: "white"}}>RETRY</Link></div>
+            
             
         </>
     )
