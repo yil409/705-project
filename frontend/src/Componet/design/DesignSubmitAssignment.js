@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect,  useState } from 'react';
 import { Rnd }  from 'react-rnd';
 
 const style = {
@@ -21,6 +21,12 @@ function SubmitAssignment () {
         x: 10,
         y: 10
     });
+    
+    useEffect(() => {
+        // storing submit button size and position
+        localStorage.setItem("submitButton", JSON.stringify(submitInfo));
+      }, [submitInfo]);
+      
 
     return (
         <>

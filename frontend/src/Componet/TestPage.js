@@ -19,7 +19,7 @@ const renderTime = ({ remainingTime }) => {
     );
 };
 
-
+  
 
  function TestPage() {
 
@@ -33,30 +33,50 @@ const renderTime = ({ remainingTime }) => {
         setIsStartShown(false);
         setKey(prevKey => prevKey + 1);
         setIsPlay(true);
+        console.log(startButton);
     };
 
     const handleSubmitClick = (event) => {
         setIsPlay(false);
     };
 
+    const [startButton, setStartButton] = useState(() => {
+        // getting stored start button value
+        const saved = localStorage.getItem("startButton");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+      });
+
+    const [submitButton, setSubmitButton] = useState(() => {
+        // getting stored submit button value
+        const saved2 = localStorage.getItem("submitButton");
+        const initialValue2 = JSON.parse(saved2);
+        return initialValue2 || "";
+    });
+    const [uploadButton, setUploadButton] = useState(() => {
+        // getting stored upload button value
+        const saved3 = localStorage.getItem("uploadButton");
+        const initialValue3 = JSON.parse(saved3);
+        return initialValue3 || "";
+    });
 
     const startbuttonstyle = {
-        width: '200px',
-        height: '50px',
-        marginLeft: '10px',
-        marginTop: '10px'
+        width: startButton.width,
+        height: startButton.height,
+        marginLeft: startButton.x,
+        marginTop: startButton.y
     };
-    const choosebuttonstyle = {
-        width: '200px',
-        height: '50px',
-        marginLeft: '10px',
-        marginTop: '10px'
+    const uploadbuttonstyle = {
+        width: uploadButton.width,
+        height: uploadButton.height,
+        marginLeft: uploadButton.x,
+        marginTop: uploadButton.y
     };
     const submitbuttonstyle = {
-        width: '200px',
-        height: '50px',
-        marginLeft: '10px',
-        marginTop: '10px'
+        width: submitButton.width,
+        height: submitButton.height,
+        marginLeft: submitButton.x,
+        marginTop: submitButton.y
     };
     
 
@@ -68,11 +88,11 @@ const renderTime = ({ remainingTime }) => {
                 
                 <div className='assignmentPage'>
 
-                {isStartShown ? 
-                    <div className="startAssignment"  style={{border: "solid 1px transparent"}} >
-                        <button style={startbuttonstyle}  onClick={handleStartClick}>Start Assignment</button>
-                    </div>
-                :null}
+                    {isStartShown ? 
+                        <div className="startAssignment"  style={{border: "solid 1px transparent"}} >
+                            <button style={startbuttonstyle}  onClick={handleStartClick}>Start Assignment</button>
+                        </div>
+                    :null}
 
                     <div className="title">
                         <h1>Project plan presentation</h1>
@@ -83,8 +103,6 @@ const renderTime = ({ remainingTime }) => {
                             <span >Submitting a file upload</span>
                         </div>
                     </div>
-
-                    
                     
                     <div className="description">
                         <p>First, please read the &nbsp;<a href="https://canvas.auckland.ac.nz/courses/72023/pages/overview-of-the-course-group-project" >Course Group Project Overview</a>.</p>
@@ -105,10 +123,11 @@ const renderTime = ({ remainingTime }) => {
                         <p>By the time of this presentation, your group should have ensured the feasibility of the implementation of your project. For the rough plan for your implementation, please do&nbsp; "feasibility studies", e.g. touched (downloaded, checked) technologies and confirmed that interactions work. This can be in the form of what is often referred to as an architectural spike. For the evaluation study you should have developed a full draft, even if you don't present it fully in this presentation.</p>
                         <p> Submit the slides and video by the due date. &nbsp;</p>
                     </div>
+
                     {isSubmitShown ? 
                         <div className='submitArea'>
                             <div className="fileUploadArea" style={{border: "solid 1px transparent"}}>
-                                <button style={choosebuttonstyle}  >Choose File</button>
+                                <button style={uploadbuttonstyle}  >Upload</button>
                             </div>
                             <div className="fileUploadArea" style={{border: "solid 1px transparent"}}>
                                 <button style={submitbuttonstyle}  onClick={handleSubmitClick} >Submit Assignment</button>

@@ -20,6 +20,13 @@ const style = {
         x: 10,
         y: 10
     });
+
+
+    useEffect(() => {
+      // storing start button size and position
+      localStorage.setItem("startButton", JSON.stringify(startInfo));
+    }, [startInfo]);
+
     
       return (
 

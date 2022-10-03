@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect,  useState } from 'react';
 import { Rnd }  from 'react-rnd';
 
 const style = {
@@ -21,6 +21,11 @@ function UploadButton () {
         x: 10,
         y: 10
     });
+    
+    useEffect(() => {
+        // storing choose file button size and position
+        localStorage.setItem("uploadButton", JSON.stringify(uploadInfo));
+      }, [uploadInfo]);
 
     return (
         <>
@@ -40,7 +45,7 @@ function UploadButton () {
                     }}
                     bounds="parent"
                 >
-                    Choose File
+                    Upload
                 </Rnd>
             
         </>

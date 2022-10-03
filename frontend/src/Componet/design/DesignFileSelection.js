@@ -20,6 +20,9 @@ const style = {
         x: 10,
         y: 10
     });
+    useEffect(() => {
+      console.log(startInfo);
+    }, [startInfo]);
     
       return (
 
