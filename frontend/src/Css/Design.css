@@ -27,15 +27,5 @@
 }
   
 
-.nextpageButton{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 6vw;
-    height: 3vw;
-    background-color: forestgreen;
-    position: fixed;
-    bottom: 80px;
-    right: 80px;
-}
+
 

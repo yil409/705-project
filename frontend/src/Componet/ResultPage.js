@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import '.././Css/Design.css';
+import '.././App.css';
 
 
 export default function ResultPage() {

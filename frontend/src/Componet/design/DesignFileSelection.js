@@ -20,9 +20,12 @@ const style = {
         x: 10,
         y: 10
     });
+
     useEffect(() => {
-      console.log(startInfo);
-    }, [startInfo]);
+      // storing choose file button size and position
+      localStorage.setItem("confirmButton", JSON.stringify(confirmInfo));
+    }, [confirmInfo]);
+
     
       return (
 

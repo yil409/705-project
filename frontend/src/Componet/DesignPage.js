@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import '.././Css/Design.css';
+import '.././App.css';
 import UploadButton from './design/DesignUploadButton';
 import StartAssignment from './design/DesignStartAssignment';
 import SubmitAssignment from './design/DesignSubmitAssignment';
@@ -55,17 +56,17 @@ function DesignPage () {
                     </div>
 
                         <div className="fileUploadArea">
-                        <UploadButton/>
+                            <UploadButton/>
                         </div>
                         <div className="fileUploadArea">
-                        <SubmitAssignment/>
+                            <SubmitAssignment/>
                         </div>
   
                     
                 </div>
                 
                 <div className="nextpageButton">
-                <Link to="/popup" style={{color: "white"}}>NEXTPAGE</Link>
+                    <Link to="/popup" style={{color: "white"}}>NEXTPAGE</Link>
                 </div>
                 
             

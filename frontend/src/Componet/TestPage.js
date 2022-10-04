@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { Link } from "react-router-dom";
 import '../Css/Test.css';
-import '.././Css/Design.css';
+import '.././App.css';
 
 //countdown Timer
 const renderTime = ({ remainingTime }) => {
