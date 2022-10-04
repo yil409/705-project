@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import '.././Css/Design.css';
+import '.././App.css';
 import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} from 'react-vis';
 
 
@@ -55,7 +55,7 @@ export default function ResultPage() {
                 </div>
             </div>
             <div className="nextpageButton">
-                <Link to="/start" style={{color: "white"}}>RETRY</Link>
+                <Link to="/" style={{color: "white"}}>RETRY</Link>
             </div>
         </>
     )
