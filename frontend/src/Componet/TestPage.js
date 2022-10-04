@@ -181,15 +181,9 @@ const renderTime = ({ remainingTime }) => {
                                                 {chosenFile==2 ? <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div>}
                                                 {chosenFile==3 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div> : <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div>}
                                             </div>
-                                    
                                             <div>
                                                 <button style={choosebuttonstyle}  onClick={close} >Submit Assignment</button>
                                             </div>
-                                    
-                                    
-                                    
-                                    
-                                    
                                         </div>
                                     )}
                                 </Popup>
