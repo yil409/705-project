@@ -1,0 +1,9 @@
+.resultPageContainer {
+    display: flex;
+    flex-direction: row;
+
+}
+.tr,th,td{
+    border: 1px solid black;
+    text-align: center;
+}

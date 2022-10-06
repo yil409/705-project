@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import '.././App.css';
+import '.././Css/Result.css';
 import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} from 'react-vis';
+import 'react-vis/dist/style.css';
+
 
 
 export default function ResultPage() {
@@ -42,15 +45,9 @@ export default function ResultPage() {
                 <XYPlot width={300} height={300}>
                     <VerticalGridLines />
                     <HorizontalGridLines />
-                    <XAxis
-                    hideLine
-                    title="X"
-                    labelFormat={v => `Value is ${v}`}
-                    labelValues={[2]}
-                    tickValues={[1, 1.5, 2, 3]}
-                    />
-                    <YAxis hideTicks />
-                    <LineSeries data={data} color="#cd3b54" style={{ fill: 'none' }}/>
+                    <XAxis tickTotal={data.length}/>
+                    <YAxis tickTotal={Math.max.apply(Math, data.map(function(o) { return o.y; }))}/>
+                    <LineSeries data={data} style={{ fill: 'none' }}/>
                 </XYPlot>
                 </div>
             </div>
