@@ -5,8 +5,6 @@ import '.././Css/Result.css';
 import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} from 'react-vis';
 import 'react-vis/dist/style.css';
 
-
-
 export default function ResultPage() {
     const data = [
         {x: 0, y: 8},
@@ -39,14 +37,15 @@ export default function ResultPage() {
                         })}
                     </table>
                 </div>
-                
                 <div className="graph">
-                <h1>Your Result</h1>
-                <XYPlot width={300} height={300}>
-                    <VerticalGridLines />
-                    <HorizontalGridLines />
-                    <XAxis tickTotal={data.length}/>
-                    <YAxis tickTotal={Math.max.apply(Math, data.map(function(o) { return o.y; }))}/>
+                    <div className='yourResult'>
+                        <h1>Your Result</h1>
+                    </div>
+                <XYPlot width={700} height={700}>
+                    <VerticalGridLines/>
+                    <HorizontalGridLines/>
+                    <XAxis tickTotal={data.length} title="Design"/>
+                    <YAxis tickTotal={Math.max.apply(Math, data.map(function(o) { return o.y; }))} title="Time"/>
                     <LineSeries data={data} style={{ fill: 'none' }}/>
                 </XYPlot>
                 </div>
