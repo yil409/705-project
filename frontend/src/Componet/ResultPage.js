@@ -6,18 +6,16 @@ import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} fro
 import 'react-vis/dist/style.css';
 
 export default function ResultPage() {
-    const data = [
-        {x: 0, y: 8},
-        {x: 1, y: 5},
-        {x: 2, y: 4},
-        {x: 3, y: 9},
-        {x: 4, y: 1},
-        {x: 5, y: 7},
-        {x: 6, y: 6},
-        {x: 7, y: 3},
-        {x: 8, y: 2},
-        {x: 9, y: 0}
-      ];
+    const [results, setResults] = useState(() => {
+        const saved0 = localStorage.getItem("results");
+        const initialValue0 = JSON.parse(saved0);
+
+        return initialValue0 || [];
+      });
+    const data = [];
+      for (let i = 0; i < results.length; i++){
+        data.push({x: i, y: results[i].toFixed(3)});
+      }
     return (
         <>
             <div class="resultPageContainer">
