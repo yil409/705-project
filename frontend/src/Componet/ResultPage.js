@@ -16,16 +16,17 @@ export default function ResultPage() {
       for (let i = 0; i < results.length; i++){
         data.push({x: i, y: results[i].toFixed(3)});
       }
+      const Last10Data = data.slice(-10);
     return (
         <>
             <div class="resultPageContainer">
                 <div className="table">
                     <table>
                         <tr>
-                            <th>Design</th>
+                            <th>Attemp</th>
                             <th>Time</th>
                         </tr>
-                        {data.map((val, key) => {
+                        {Last10Data.map((val, key) => {
                         return (
                             <tr key={key}>
                                 <td>{val.x}</td>
@@ -39,12 +40,12 @@ export default function ResultPage() {
                     <div className='yourResult'>
                         <h1>Your Result</h1>
                     </div>
-                <XYPlot width={700} height={700}>
+                <XYPlot width={700} height={700} xDomain={[Last10Data[0].x, Last10Data[0].x+9]} yDomain={[0, Math.max.apply(Math, Last10Data.map(function(o) { return o.y; }))]}>
                     <VerticalGridLines/>
                     <HorizontalGridLines/>
-                    <XAxis tickTotal={data.length} title="Design"/>
-                    <YAxis tickTotal={Math.max.apply(Math, data.map(function(o) { return o.y; }))} title="Time"/>
-                    <LineSeries data={data} style={{ fill: 'none' }}/>
+                    <XAxis title="Design"/>
+                    <YAxis title="Time"/>
+                    <LineSeries data={Last10Data} style={{ fill: 'none' }}/>
                 </XYPlot>
                 </div>
             </div>
