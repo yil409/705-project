@@ -66,6 +66,21 @@ const renderTime = ({ remainingTime }) => {
         }
     };
 
+    const handleEvent = (
+        params, // GridRowParams
+        event, // MuiEvent<React.MouseEvent<HTMLElement>>
+        details, // GridCallbackDetails
+      ) => {
+        setChosenFile(params.row.id)
+      };
+
+
+
+
+
+
+
+
     const [results, setResults] = useState(() => {
         const saved0 = localStorage.getItem("results");
         const initialValue0 = JSON.parse(saved0);
@@ -94,7 +109,7 @@ const renderTime = ({ remainingTime }) => {
     });
     const [chooseButton, setChooseButton] = useState(() => {
         // getting stored upload button value
-        const saved4 = localStorage.getItem("chooseButton");
+        const saved4 = localStorage.getItem("confirmButton");
         const initialValue4 = JSON.parse(saved4);
         return initialValue4 || "";
     });
@@ -257,8 +272,9 @@ const renderTime = ({ remainingTime }) => {
                                                             <DataGrid autoHeight
                                                                 rows={rows}
                                                                 columns={columns}
+                                                                onRowClick={handleEvent}
                                                                 // checkboxSelection
-                                                            />F
+                                                            />
 
                                                             
 
@@ -266,7 +282,8 @@ const renderTime = ({ remainingTime }) => {
 
 
                                                         </Box>
-                                                        <Box
+
+                                                        {/* <Box
                                                             sx={{
                                                                 // float: left,
                                                                 width: 0.8,
@@ -277,10 +294,11 @@ const renderTime = ({ remainingTime }) => {
                                                         // className="fileUploadArea"
                                                         >
                                                             <FileSelection onSubmit={handleSubmit}/>           
-                                                        </Box>
+                                                        </Box> */}
+                                                        <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
                                                     </center>
                                                     
-                                                    <div className="nextpageButton"> <Link to="/test" style={{color: "white"}}>NEXTPAGE</Link> </div>
+                                                    
                                             </div>
 
 
