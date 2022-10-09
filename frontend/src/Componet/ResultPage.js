@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import '.././App.css';
+import '.././Css/Result.css';
 import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} from 'react-vis';
-
+import 'react-vis/dist/style.css';
 
 export default function ResultPage() {
     const data = [
@@ -36,21 +37,16 @@ export default function ResultPage() {
                         })}
                     </table>
                 </div>
-                
                 <div className="graph">
-                <h1>Your Result</h1>
-                <XYPlot width={300} height={300}>
-                    <VerticalGridLines />
-                    <HorizontalGridLines />
-                    <XAxis
-                    hideLine
-                    title="X"
-                    labelFormat={v => `Value is ${v}`}
-                    labelValues={[2]}
-                    tickValues={[1, 1.5, 2, 3]}
-                    />
-                    <YAxis hideTicks />
-                    <LineSeries data={data} color="#cd3b54" style={{ fill: 'none' }}/>
+                    <div className='yourResult'>
+                        <h1>Your Result</h1>
+                    </div>
+                <XYPlot width={700} height={700}>
+                    <VerticalGridLines/>
+                    <HorizontalGridLines/>
+                    <XAxis tickTotal={data.length} title="Design"/>
+                    <YAxis tickTotal={Math.max.apply(Math, data.map(function(o) { return o.y; }))} title="Time"/>
+                    <LineSeries data={data} style={{ fill: 'none' }}/>
                 </XYPlot>
                 </div>
             </div>

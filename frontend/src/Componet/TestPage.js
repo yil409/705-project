@@ -3,6 +3,11 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { Link } from "react-router-dom";
 import '../Css/Test.css';
 import '.././App.css';
+import Popup from 'reactjs-popup';
+import { useNavigate } from "react-router-dom";
+import Box from "@mui/material/Box";
+import { DataGrid } from '@mui/x-data-grid';
+import FileSelection from './design/DesignFileSelection';
 
 //countdown Timer
 const renderTime = ({ remainingTime }) => {
@@ -27,6 +32,11 @@ const renderTime = ({ remainingTime }) => {
     const [isSubmitShown, setIsSubmitShown] = useState(false);
     const [key, setKey] = useState(0);
     const [isPlay, setIsPlay] = useState(false);
+    const [chosenFile, setChosenFile] = useState(0)
+    const [seconds, setSeconds] = useState(0)
+    const [msg, setMsg] = useState()
+    const navigate = useNavigate();
+    const timer = null;
 
     const handleStartClick = event => {
         setIsSubmitShown(true);
@@ -34,11 +44,49 @@ const renderTime = ({ remainingTime }) => {
         setKey(prevKey => prevKey + 1);
         setIsPlay(true);
         console.log(startButton);
+        timer = setInterval(() => {
+            setSeconds((seconds) => seconds + 0.01)
+        },10)
     };
 
     const handleSubmitClick = (event) => {
-        setIsPlay(false);
+        if(chosenFile == 2){
+            setIsPlay(false);
+            clearInterval(timer)
+            const newResults = results
+            newResults.push(seconds)
+            localStorage.setItem("results", JSON.stringify(newResults));
+            navigate("/result");
+        }
+        else if(chosenFile == 0){
+            setMsg('Choose a file first!')
+        }
+        else{
+            setMsg('Wrong file!')
+        }
     };
+
+    const handleEvent = (
+        params, // GridRowParams
+        event, // MuiEvent<React.MouseEvent<HTMLElement>>
+        details, // GridCallbackDetails
+      ) => {
+        setChosenFile(params.row.id)
+      };
+
+
+
+
+
+
+
+
+    const [results, setResults] = useState(() => {
+        const saved0 = localStorage.getItem("results");
+        const initialValue0 = JSON.parse(saved0);
+        return initialValue0 || [];
+      });
+
 
     const [startButton, setStartButton] = useState(() => {
         // getting stored start button value
@@ -59,6 +107,12 @@ const renderTime = ({ remainingTime }) => {
         const initialValue3 = JSON.parse(saved3);
         return initialValue3 || "";
     });
+    const [chooseButton, setChooseButton] = useState(() => {
+        // getting stored upload button value
+        const saved4 = localStorage.getItem("confirmButton");
+        const initialValue4 = JSON.parse(saved4);
+        return initialValue4 || "";
+    });
 
     const startbuttonstyle = {
         width: startButton.width,
@@ -78,7 +132,42 @@ const renderTime = ({ remainingTime }) => {
         marginLeft: submitButton.x,
         marginTop: submitButton.y
     };
+    const choosebuttonstyle = {
+        width: chooseButton.width,
+        height: chooseButton.height,
+        marginLeft: chooseButton.x,
+        marginTop: chooseButton.y
+    };
+
+    const columns = [
+        { 
+            field: 'id', headerName: 'ID', width: 90 
+        },
+        {
+            field: 'fileName',
+            headerName: 'File name',
+            width: 550,
+        },
+        {
+            field: 'dateModified',
+            headerName: 'Date modified',
+            width: 160,
+        },
+    ];
+      
+    const rows = [
+        { id: 1, fileName: 'COMPSCI 705 Assignment', dateModified: '04-10-2022' },
+        { id: 2, fileName: 'COMPSCI 705 Slides', dateModified: '01-10-2022' },
+        { id: 3, fileName: 'COMPSCI 705 Recording', dateModified: '05-09-2022'},
+        { id: 4, fileName: 'COMPSCI 760 Assignment', dateModified: '04-08-2022' },
+    ];
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('You clicked submit.');
+    }
     
+
 
     return (
         <>
@@ -122,12 +211,101 @@ const renderTime = ({ remainingTime }) => {
                         </ol>
                         <p>By the time of this presentation, your group should have ensured the feasibility of the implementation of your project. For the rough plan for your implementation, please do&nbsp; "feasibility studies", e.g. touched (downloaded, checked) technologies and confirmed that interactions work. This can be in the form of what is often referred to as an architectural spike. For the evaluation study you should have developed a full draft, even if you don't present it fully in this presentation.</p>
                         <p> Submit the slides and video by the due date. &nbsp;</p>
+                        {msg ? <p style={{color:"red"}}>{msg}</p> : <p>Good luck!</p>}
                     </div>
 
                     {isSubmitShown ? 
                         <div className='submitArea'>
                             <div className="fileUploadArea" style={{border: "solid 1px transparent"}}>
-                                <button style={uploadbuttonstyle}  >Upload</button>
+                                {/* <button style={uploadbuttonstyle}  >Upload</button> */}
+                                <Popup trigger={<button style={uploadbuttonstyle}  >Upload</button>} modal>
+                                    {close => (
+                                        <div style={{height:1000, width:1000, background:"white", border: "solid"}}>
+                                            {/* <div style={{textAlign:"center", height:100}}>
+                                            <h1>Choose File</h1>
+                                            </div>
+                                            <div style={{height:700, textAlign:"center"}}>
+                                                {chosenFile==1 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(1)}><h1 style={{marginTop:90}}>File1</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid" }} onClick={()=>setChosenFile(1)}><h1 style={{marginTop:90}}>File1</h1></div>}
+                                                {chosenFile==2 ? <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div>}
+                                                {chosenFile==3 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div> : <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div>}
+                                            </div>
+                                            <div>
+                                                <button style={choosebuttonstyle}  onClick={close} >Submit Assignment</button>
+                                            </div> */}
+
+
+                                            <div>
+                                                    <div
+                                                        className="head"
+                                                        style={{
+                                                            width: "fit-content",
+                                                            margin: "auto",
+                                                        }}
+                                                    >
+                                                        <h1
+                                                            style={{
+                                                                color: "blue",
+                                                            }}
+                                                        >
+                                                            This is the popup modal window's designing page!
+                                                        </h1>
+                                                        <strong>Choose a file below to upload</strong>
+                                                    </div>
+                                                    <br />
+                                                    <center>
+                                                        <Box
+                                                            sx={{
+                                                                display: "flex",
+                                                                flexWrap: "wrap",
+                                                                margin: "auto",
+                                                                width: "fit-content",
+                                                                "& > :not(style)": {
+                                                                    m: 1,
+                                                                    width: 900,
+                                                                    height: 300,
+                                                                },
+                                                            }}
+                                                        >
+
+
+
+                                                            <DataGrid autoHeight
+                                                                rows={rows}
+                                                                columns={columns}
+                                                                onRowClick={handleEvent}
+                                                                // checkboxSelection
+                                                            />
+
+                                                            
+
+
+
+
+                                                        </Box>
+
+                                                        {/* <Box
+                                                            sx={{
+                                                                // float: left,
+                                                                width: 0.8,
+                                                                height: 25,
+                                                                border: 1 ,
+                                                                padding: 20,
+                                                            }}
+                                                        // className="fileUploadArea"
+                                                        >
+                                                            <FileSelection onSubmit={handleSubmit}/>           
+                                                        </Box> */}
+                                                        <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
+                                                    </center>
+                                                    
+                                                    
+                                            </div>
+
+
+
+                                        </div>
+                                    )}
+                                </Popup>
                             </div>
                             <div className="fileUploadArea" style={{border: "solid 1px transparent"}}>
                                 <button style={submitbuttonstyle}  onClick={handleSubmitClick} >Submit Assignment</button>
@@ -145,7 +323,7 @@ const renderTime = ({ remainingTime }) => {
                             duration={10}
                             colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
                             colorsTime={[10, 6, 3, 0]}
-                            onComplete={() => ({ shouldRepeat: true, delay: 1 })}
+                            onComplete={() => ({ shouldRepeat: false, delay: 1 })}
                             >
                             {renderTime}
                             </CountdownCircleTimer>
@@ -154,7 +332,6 @@ const renderTime = ({ remainingTime }) => {
                 </div>
             </div>
             
-            <div className="nextpageButton"><Link to="/result" style={{color: "white"}}>SHOW RESULTS</Link></div>
             
 
         </>

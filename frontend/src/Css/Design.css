@@ -25,11 +25,9 @@
     height: 15vh;
     border: 1px dashed rgb(184, 183, 183);
 }
-.resultPageContainer {
-    display: flex;
-    flex-direction: row;
-}
   
 
-
+.isActive {
+    background-color: darkgray;
+}
 
