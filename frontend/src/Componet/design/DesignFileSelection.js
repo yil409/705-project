@@ -104,48 +104,7 @@ const style = {
     
       return (
 
-        // <Rnd
-          
-        //   // onDrag={()=>setDrag(true)}
-        //   // onDragStart={() => {
-        //   //   setDrag(true)
-        //   // }}
-
-        //   style={style}
-        //   size={{ width: confirmInfo.width, height: confirmInfo.height }}
-        //   position={{ x: confirmInfo.x, y: confirmInfo.y }}
-        //   onDragStop={(e, d) => {
-
-        //     // eventControl()
-
-        //     // setDrag(false)
-        //     // if(setDrag==true){
-        //       setConfirmInfo({...confirmInfo, x: d.x, y: d.y });
-        //       console.log(setDrag)
-        //     // }
-        //     // setConfirmInfo({...confirmInfo, x: d.x, y: d.y });
-
-            
-
-        //   }}
-        //   onResizeStop={(e, direction, ref, delta, position) => {
-        //     setConfirmInfo({
-        //       width: ref.style.width,
-        //       height: ref.style.height,
-        //       ...position
-        //     });
-        //   }}
-          
-        //   bounds="parent"
-        //   // onclick={handleClose}
-        //   // onDoubleClick={handleClick}
-        //   // onClick={()=>{
-        //   //   if(drag){
-        //   //     return
-        //   //   }
-        //   //   setOpen(true)}
-        //   // }
-        // >
+        
 
 
 
@@ -190,7 +149,7 @@ const style = {
           Confirm
           </div>
 
-          <Dialog
+          {/* <Dialog
             open={open}
             onClose={handleClose}
             aria-describedby="alert-dialog-description"
@@ -207,7 +166,7 @@ const style = {
                 YES
               </Button>
             </DialogActions>
-          </Dialog>
+          </Dialog> */}
 
 
 
