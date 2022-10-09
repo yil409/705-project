@@ -8,6 +8,9 @@ import DesignPopup from './Componet/DesignPopup';
 import TestPage from './Componet/TestPage';
 import ResultPage from './Componet/ResultPage';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faShield, faUser, faGauge, faBook, faUsers, faCalendar, faInbox, faClock, faCircleQuestion } from '@fortawesome/free-solid-svg-icons'
+
 
 function App() {
   return (
@@ -17,10 +20,61 @@ function App() {
       <div className="App">
 
         <div className="sider">
-              <h2>Side bar</h2>
+              <ul>
+                <li class="highlighted-menu-item">
+                  <FontAwesomeIcon icon={faShield} size="3x" color='' />
+                </li>
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faUser} size="2x" />
+                  <br></br>
+                   Account
+                </li>
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faGauge} size="2x" />
+                  <br></br>
+                   Dashboard
+                </li>
+
+                <li class='highlighted-menu-item'>
+                  <FontAwesomeIcon icon={faBook} size="2x" color='' />
+                  <br></br>
+                   Courses
+                </li>
+
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faUsers} size="2x"/>
+                  <br></br>
+                   Groups
+                </li>
+
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faCalendar} size="2x"/>
+                  <br></br>
+                   Calendar
+                </li>
+
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faInbox} size="2x"/>
+                  <br></br>
+                   Inbox
+                </li>
+
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faClock} size="2x"/>
+                  <br></br>
+                   History
+                </li>
+
+                <li class='menu-item'>
+                  <FontAwesomeIcon icon={faCircleQuestion} size="2x"/>
+                  <br></br>
+                   Help
+                </li>
+              </ul>
         </div>
         <div className="header">
-              <h3>Kanves</h3>
+          <FontAwesomeIcon icon={faBars} size="2x"/>
+          <h3>Kanvas</h3>
         </div>
         <div className="main">
 
