@@ -33,6 +33,7 @@ const renderTime = ({ remainingTime }) => {
     const [key, setKey] = useState(0);
     const [isPlay, setIsPlay] = useState(false);
     const [chosenFile, setChosenFile] = useState(0)
+    const [selectedFile, setSelectedFile] = useState(0)
     const [seconds, setSeconds] = useState(0)
     const [msg, setMsg] = useState()
     const navigate = useNavigate();
@@ -48,6 +49,11 @@ const renderTime = ({ remainingTime }) => {
             setSeconds((seconds) => seconds + 0.01)
         },10)
     };
+
+    const handleSelectFile = () => {
+        setChosenFile(selectedFile)
+        
+    }
 
     const handleSubmitClick = (event) => {
         if(chosenFile == 2){
@@ -71,7 +77,7 @@ const renderTime = ({ remainingTime }) => {
         event, // MuiEvent<React.MouseEvent<HTMLElement>>
         details, // GridCallbackDetails
       ) => {
-        setChosenFile(params.row.id)
+        setSelectedFile(params.row.id)
       };
 
 
@@ -295,7 +301,7 @@ const renderTime = ({ remainingTime }) => {
                                                         >
                                                             <FileSelection onSubmit={handleSubmit}/>           
                                                         </Box> */}
-                                                        <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
+                                                        <button style={choosebuttonstyle}  onClick={() => {handleSelectFile(); close()}} >Choose file</button>
                                                     </center>
                                                     
                                                     
