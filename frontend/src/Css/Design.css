@@ -18,6 +18,11 @@
     width: 28vw;
     height: 120px;
     border: 1px solid transparent;
+    margin-bottom: 15px;
+    
+}
+.title p{
+    margin-bottom: 0px;
 }
 .startAssignment {
     float: right;
@@ -31,3 +36,7 @@
     background-color: darkgray;
 }
 
+.detail {
+    display : flex;
+    justify-content: space-between;
+}

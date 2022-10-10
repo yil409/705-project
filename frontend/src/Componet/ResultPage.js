@@ -69,7 +69,6 @@ export default function ResultPage() {
                     <p>Here are the results from your experiment. </p>
                     <p>With each iteration, how does the size and position of the buttons affect how quickly you are able to submit the assignment? </p>
                     <p></p>
-                    <p></p>
                     <p>When you are ready, click the "Next Page" button.</p>
                 </div>
 

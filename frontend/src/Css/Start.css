@@ -1,9 +1,13 @@
 .heading {
-    width: 28vw;
-    height: 65px;
+    display: flex;
+    width: 100%;
+    height: 35px;
     border: 1px solid transparent;
+    justify-content: space-between;
 }
-
+.heading h1 {
+    float:left;
+}
 .startPage {
     float: left;
     width: 80%;
@@ -12,20 +16,31 @@
     border: 1px solid transparent;
     height: auto;
 }
-
+.startPage li {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .startButton {
-        margin: auto;
         text-align: center;
         background: #00457C;
         color: #fff;
         border: solid 1px #ddd;
         border-radius: 6px;
-        width: 200px;
-        height: 50px;
+        width: 150px;
+        height: 40px;
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        font-weight: normal;
+        line-height: 1.5;
+        font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .center {
     display: flex;  
+    float: right;
     justify-content: center;  
     align-items: center;  
 }

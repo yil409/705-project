@@ -1,3 +1,16 @@
+p {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #2D3B45;
+}
+li {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .header{
   float: left;
   display: flex;
@@ -74,7 +87,6 @@
   font-size: 1rem;
   line-height: 20px;
 
-
   position: fixed;
   bottom: 80px;
   right: 80px;
@@ -147,5 +159,6 @@
 .breakBar {
   width: 100%;
   border-bottom: 1px solid #c7cdd1;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }

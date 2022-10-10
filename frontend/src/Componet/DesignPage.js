@@ -25,13 +25,14 @@ function DesignPage () {
                     </div>
 
                     <div className="title">
-                        <h1>Project plan presentation</h1>
-                    
+                        <h1>705 - Project Plan Presentation</h1>
+                        <div className='breakBar'> </div>
                         <div className="detail">
-                            <span >Due: &nbsp; Aug 23 by&nbsp;11:59pm</span>
-                            <span >Points: &nbsp; 5 </span>
-                            <span >Submitting a file upload</span>
+                            <p ><b>Due</b> &nbsp; Aug 23 by&nbsp;11:59pm</p>
+                            <p ><b>Points </b> &nbsp; 5 </p>
+                            <p ><b>Submitting</b> a file upload</p>
                         </div>
+                        <div className='breakBar'> </div>
                     </div>
 
                     
@@ -74,7 +75,6 @@ function DesignPage () {
 
                     <p>In this page, you can design how the assignment submission page will look. </p>
                     <p>Click and drag the buttons within the boxed boundaries to resize and change their position. </p>
-                    <p></p>
                     <p></p>
                     <p>When you are ready, click the "Next Page" button.</p>
                 </div>
