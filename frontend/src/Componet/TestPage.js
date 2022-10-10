@@ -275,7 +275,7 @@ const renderTime = ({ remainingTime }) => {
 
                                                     </center>
                                                     <div className="actions">
-                                                        <div className="chooseFileArea">
+                                                        <div className="chooseFileArea2">
                                                             <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
                                                         </div>
                                                         

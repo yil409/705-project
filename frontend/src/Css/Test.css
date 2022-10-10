@@ -24,6 +24,12 @@ button {
     border: 2px dashed rgb(184, 183, 183);
     margin: 20px auto;
 }
+.chooseFileArea2{
+    width: 50vw;
+    height: 15vh;
+    border: 2px dashed transparent;
+    margin: 20px auto;
+}
 
 .modal {
     height: auto;
