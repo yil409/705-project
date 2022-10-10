@@ -50,7 +50,7 @@ const renderTime = ({ remainingTime }) => {
     };
 
     const handleSubmitClick = (event) => {
-        if(chosenFile == 2){
+        if(chosenFile == 1){
             setIsPlay(false);
             clearInterval(timer)
             const newResults = results
