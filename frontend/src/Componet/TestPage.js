@@ -76,11 +76,6 @@ const renderTime = ({ remainingTime }) => {
 
 
 
-
-
-
-
-
     const [results, setResults] = useState(() => {
         const saved0 = localStorage.getItem("results");
         const initialValue0 = JSON.parse(saved0);
@@ -111,6 +106,7 @@ const renderTime = ({ remainingTime }) => {
         // getting stored upload button value
         const saved4 = localStorage.getItem("confirmButton");
         const initialValue4 = JSON.parse(saved4);
+        console.log(initialValue4);
         return initialValue4 || "";
     });
 
@@ -217,22 +213,11 @@ const renderTime = ({ remainingTime }) => {
                     {isSubmitShown ? 
                         <div className='submitArea'>
                             <div className="fileUploadArea" style={{border: "solid 1px transparent"}}>
-                                {/* <button style={uploadbuttonstyle}  >Upload</button> */}
+                                
                                 <Popup trigger={<button style={uploadbuttonstyle}  >Upload</button>} modal>
                                     {close => (
-                                        <div style={{height:1000, width:1000, background:"white", border: "solid"}}>
-                                            {/* <div style={{textAlign:"center", height:100}}>
-                                            <h1>Choose File</h1>
-                                            </div>
-                                            <div style={{height:700, textAlign:"center"}}>
-                                                {chosenFile==1 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(1)}><h1 style={{marginTop:90}}>File1</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid" }} onClick={()=>setChosenFile(1)}><h1 style={{marginTop:90}}>File1</h1></div>}
-                                                {chosenFile==2 ? <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div>}
-                                                {chosenFile==3 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div> : <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div>}
-                                            </div>
-                                            <div>
-                                                <button style={choosebuttonstyle}  onClick={close} >Submit Assignment</button>
-                                            </div> */}
 
+                                        <div className="modal">
 
                                             <div>
                                                     <div
@@ -242,17 +227,14 @@ const renderTime = ({ remainingTime }) => {
                                                             margin: "auto",
                                                         }}
                                                     >
-                                                        <h1
-                                                            style={{
-                                                                color: "blue",
-                                                            }}
-                                                        >
-                                                            This is the popup modal window's designing page!
-                                                        </h1>
+                                                        <h2>Modal Window</h2>
                                                         <strong>Choose a file below to upload</strong>
                                                     </div>
                                                     <br />
                                                     <center>
+
+                                                    <div className="content">
+                                                        <div style={{ height: "35vh" ,minHeight:"340px"}}> 
                                                         <Box
                                                             sx={{
                                                                 display: "flex",
@@ -266,9 +248,6 @@ const renderTime = ({ remainingTime }) => {
                                                                 },
                                                             }}
                                                         >
-
-
-
                                                             <DataGrid autoHeight
                                                                 rows={rows}
                                                                 columns={columns}
@@ -276,26 +255,17 @@ const renderTime = ({ remainingTime }) => {
                                                                 // checkboxSelection
                                                             />
 
-                                                            
-
-
-
-
                                                         </Box>
+                                                        </div> 
+                                                    </div>
+                                                    <div className="actions">
+                                                        <div className="chooseFileArea">
+                                                             <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
+                                                        </div>
+                                                        
+                                                    </div>    
+                                                        
 
-                                                        {/* <Box
-                                                            sx={{
-                                                                // float: left,
-                                                                width: 0.8,
-                                                                height: 25,
-                                                                border: 1 ,
-                                                                padding: 20,
-                                                            }}
-                                                        // className="fileUploadArea"
-                                                        >
-                                                            <FileSelection onSubmit={handleSubmit}/>           
-                                                        </Box> */}
-                                                        <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
                                                     </center>
                                                     
                                                     

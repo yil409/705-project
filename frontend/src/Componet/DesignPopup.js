@@ -31,12 +31,7 @@ const renderTime = ({ remainingTime }) => {
 
 export default function DesignPopup() {
 
-    const [startButton, setStartButton] = useState(() => {
-        // getting stored start button value
-        const saved = localStorage.getItem("startButton");
-        const initialValue = JSON.parse(saved);
-        return initialValue || "";
-    });
+
 
     const [submitButton, setSubmitButton] = useState(() => {
         // getting stored submit button value
@@ -50,19 +45,7 @@ export default function DesignPopup() {
         const initialValue3 = JSON.parse(saved3);
         return initialValue3 || "";
     });
-    const [chooseButton, setChooseButton] = useState(() => {
-        // getting stored upload button value
-        const saved4 = localStorage.getItem("confirmButton");
-        const initialValue4 = JSON.parse(saved4);
-        return initialValue4 || "";
-    });
-
-    const startbuttonstyle = {
-        width: startButton.width,
-        height: startButton.height,
-        marginLeft: startButton.x,
-        marginTop: startButton.y
-    };
+    
     const uploadbuttonstyle = {
         width: uploadButton.width,
         height: uploadButton.height,
@@ -75,12 +58,7 @@ export default function DesignPopup() {
         marginLeft: submitButton.x,
         marginTop: submitButton.y
     };
-    const choosebuttonstyle = {
-        width: chooseButton.width,
-        height: chooseButton.height,
-        marginLeft: chooseButton.x,
-        marginTop: chooseButton.y
-    };
+    
 
     const columns = [
         {
@@ -176,7 +154,7 @@ export default function DesignPopup() {
                     </div>
                 </div>
 
-                <div className="nextpageButton"> <Link to="/test" style={{ color: "white" }}>NEXTPAGE</Link> </div>
+                
             </div>
 
             <div style={{
@@ -188,7 +166,8 @@ export default function DesignPopup() {
                     <Box
 
                     >
-                        <div style={{ height: 1000, width: 1000, background: "white", border: "solid", }}>
+                        <div className="modal">
+                            
                             <div
                                 className="head"
                                 style={{
@@ -196,55 +175,45 @@ export default function DesignPopup() {
                                     margin: "auto",
                                 }}
                             >
-                                <h1
-                                    style={{
-                                        color: "blue",
-                                    }}
-                                >
-                                    This is the popup modal window's designing page!
-                                </h1>
+                                <h2>Modal Window</h2>
                                 <strong>Choose a file below to upload</strong>
                             </div>
 
                             <br />
+                            <div className="content">
+                                <div style={{ height: "35vh" ,minHeight:"340px"}}>       
+                                <Box
+                                    sx={{
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        margin: "auto",
+                                        width: "fit-content",
+                                        "& > :not(style)": {
+                                            m: 1,
+                                            width: 900,
+                                            height: 300,
+                                        },
+                                    }}
+                                >
+                                    <DataGrid autoHeight
+                                        rows={rows}
+                                        columns={columns}
+                                    />
 
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    flexWrap: "wrap",
-                                    margin: "auto",
-                                    width: "fit-content",
-                                    "& > :not(style)": {
-                                        m: 1,
-                                        width: 900,
-                                        height: 300,
-                                    },
-                                }}
-                            >
-                                <DataGrid autoHeight
-                                    rows={rows}
-                                    columns={columns}
-                                />
-
-                            </Box>
-                            <div
-                                style={{
-                                    width: '80%',
-                                    height: '50%',
-                                    borderWidth: 1,
-                                    padding: 20,
-                                    borderColor: 'rgb(184, 183, 183)',
-                                    borderStyle: 'dashed',
-                                }}
-                            >
-                                <FileSelection />
+                                </Box>
+                                </div> 
                             </div>
-
+                            <div className="actions">
+                                <div className="chooseFileArea">
+                                    <FileSelection />
+                                </div>
+                            </div>
 
                         </div>
                     </Box>
                 </center>
 
+                <div className="nextpageButton"> <Link to="/test" style={{ color: "white" }}>NEXTPAGE</Link> </div>
             </div>
         </div >
 

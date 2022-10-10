@@ -17,8 +17,8 @@ function FileSelection() {
   const [confirmInfo, setConfirmInfo] = useState({
     width: '200px',
     height: '50px',
-    x: 10,
-    y: 10
+    x: 0,
+    y: 0
   });
 
   useEffect(() => {
