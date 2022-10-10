@@ -8,10 +8,12 @@ import Box from "@mui/material/Box";
 import { DataGrid } from '@mui/x-data-grid';
 
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 //countdown Timer
 const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
-      return <div className="timer">Too lale...</div>;
+      return <div className="timer">Too late...</div>;
     }
   
     return (
@@ -215,6 +217,18 @@ const renderTime = ({ remainingTime }) => {
                                 
                                 <Popup trigger={<button style={uploadbuttonstyle}  >Upload</button>} modal>
                                     {close => (
+                                        // <div style={{height:1000, width:1000, background:"white", border: "solid"}}>
+                                        //     {/* <div style={{textAlign:"center", height:100}}>
+                                        //     <h1>Choose File</h1>
+                                        //     </div>
+                                        //     <div style={{height:700, textAlign:"center"}}>
+                                        //         {chosenFile==1 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(1)}><h1 style={{marginTop:90}}>File1</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid" }} onClick={()=>setChosenFile(1)}><h1 style={{marginTop:90}}>File1</h1></div>}
+                                        //         {chosenFile==2 ? <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div> : <div style={{height:250, width:250, float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(2)}><h1 style={{marginTop:90}}>File2</h1></div>}
+                                        //         {chosenFile==3 ? <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"3px solid red"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div> : <div style={{height:250, width:250,  float:"left", cursor:"pointer", border:"2px solid"}} onClick={()=>setChosenFile(3)}><h1 style={{marginTop:90}}>File3</h1></div>}
+                                        //     </div>
+                                        //     <div>
+                                        //         <button style={choosebuttonstyle}  onClick={close} >Submit Assignment</button>
+                                        //     </div> */}
 
                                         <div className="modal">
 
@@ -257,18 +271,14 @@ const renderTime = ({ remainingTime }) => {
                                                         </Box>
                                                         </div> 
                                                     </div>
+
                                                     </center>
                                                     <div className="actions">
                                                         <div className="chooseFileArea">
-                                                             <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
+                                                            <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
                                                         </div>
                                                         
                                                     </div>    
-                                                        
-
-                                                 
-                                                    
-                                                    
                                             </div>
 
 
@@ -299,6 +309,19 @@ const renderTime = ({ remainingTime }) => {
                             </CountdownCircleTimer>
                         </div>
                     </div>
+                </div>
+
+                <div className='instructionsAndPageName'>
+                    <div className="instructionsAndPageNameHeader">
+                        <FontAwesomeIcon icon={faCircleInfo} size="2x"/>
+                        <h3> Test Page</h3>
+                    </div>
+
+                    <p>Now it is time to submit your assignment! </p>
+                    <p>Try to submit the assignment and complete this task as quickly as possible. The timer above will help simulate this pressure. </p>
+                    <p></p>
+                    <p></p>
+                    <p> The 'Next Page' button will become avaliable after the assignment is submitted. </p>
                 </div>
             </div>
             

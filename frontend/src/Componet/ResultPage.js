@@ -6,6 +6,9 @@ import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} fro
 import 'react-vis/dist/style.css';
 import { useNavigate } from "react-router-dom";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+
 export default function ResultPage() {
     const navigate = useNavigate();
     const [results, setResults] = useState(() => {
@@ -56,6 +59,20 @@ export default function ResultPage() {
                 </XYPlot>
                 </div>
             </div>
+
+            <div className='instructionsAndPageName'>
+                    <div className="instructionsAndPageNameHeader">
+                        <FontAwesomeIcon icon={faCircleInfo} size="2x"/>
+                        <h3> Results Page</h3>
+                    </div>
+
+                    <p>Here are the results from your experiment. </p>
+                    <p>With each iteration, how does the size and position of the buttons affect how quickly you are able to submit the assignment? </p>
+                    <p></p>
+                    <p></p>
+                    <p>When you are ready, click the "Next Page" button.</p>
+                </div>
+
             <div className="nextpageButton">
                 <Link to="/" style={{color: "white"}}>RETRY</Link>
             </div>
