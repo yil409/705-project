@@ -350,7 +350,7 @@ const renderTime = ({ remainingTime }) => {
                     <p>Try to submit the assignment and complete this task as quickly as possible. The timer above will help simulate this pressure. </p>
                     <p></p>
                     <p></p>
-                    <p> The 'Next Page' button will become avaliable after the assignment is submitted. </p>
+                    <p> The next page will show automatically after the assignment is submitted. </p>
                 </div>
             </div>
             

@@ -122,3 +122,9 @@
   float: left;
   width: 100%;
 }
+
+.breakBar {
+  width: 100%;
+  border-bottom: 1px solid #c7cdd1;
+  margin-bottom: 20px;
+}

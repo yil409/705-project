@@ -124,7 +124,7 @@ export default function DesignPopup() {
                     <p>When you are ready, click the "Next Page" button.</p>
                 </div>
 
-            <div className="nextpageButton"> <Link to="/test" style={{color: "white"}}>NEXTPAGE</Link> </div>
+            <div className="nextpageButton"> <Link to="/test" style={{color: "white"}}>NEXT PAGE</Link> </div>
         </div>
         
     );
