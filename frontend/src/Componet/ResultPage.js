@@ -4,14 +4,21 @@ import '.././App.css';
 import '.././Css/Result.css';
 import {XYPlot,XAxis,YAxis,VerticalGridLines,HorizontalGridLines,LineSeries} from 'react-vis';
 import 'react-vis/dist/style.css';
+import { useNavigate } from "react-router-dom";
 
 export default function ResultPage() {
+    const navigate = useNavigate();
     const [results, setResults] = useState(() => {
         const saved0 = localStorage.getItem("results");
         const initialValue0 = JSON.parse(saved0);
 
         return initialValue0 || [];
       });
+    const handleClearClick = (event) => {
+        const newResults = [];
+        localStorage.setItem("results", JSON.stringify(newResults));
+        navigate("/");
+    };
     const data = [];
       for (let i = 0; i < results.length; i++){
         data.push({x: i, y: results[i].toFixed(3)});
@@ -51,6 +58,11 @@ export default function ResultPage() {
             </div>
             <div className="nextpageButton">
                 <Link to="/" style={{color: "white"}}>RETRY</Link>
+            </div>
+
+
+            <div className="clearButton">
+                <button onClick={handleClearClick} >CLEAR RESULT AND RETRY</button>
             </div>
         </>
     )
