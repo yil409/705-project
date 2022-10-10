@@ -6,7 +6,8 @@ import UploadButton from './design/DesignUploadButton';
 import StartAssignment from './design/DesignStartAssignment';
 import SubmitAssignment from './design/DesignSubmitAssignment';
 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -65,8 +66,21 @@ function DesignPage () {
                     
                 </div>
                 
+                <div className='instructionsAndPageName'>
+                    <div className="instructionsAndPageNameHeader">
+                        <FontAwesomeIcon icon={faCircleInfo} size="2x"/>
+                        <h3> Design Page</h3>
+                    </div>
+
+                    <p>In this page, you can design how the assignment submission page will look. </p>
+                    <p>Click and drag the buttons within the boxed boundaries to resize and change their position. </p>
+                    <p></p>
+                    <p></p>
+                    <p>When you are ready, click the "Next Page" button.</p>
+                </div>
+
                 <div className="nextpageButton">
-                    <Link to="/popup" style={{color: "white"}}>NEXTPAGE</Link>
+                    <Link to="/popup" style={{color: "white"}}>NEXT PAGE</Link>
                 </div>
                 
             
