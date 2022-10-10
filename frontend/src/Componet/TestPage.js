@@ -190,15 +190,16 @@ const renderTime = ({ remainingTime }) => {
                             <button style={startbuttonstyle}  onClick={handleStartClick}>Start Assignment</button>
                         </div>
                     :null}
-
-                    <div className="title">
-                        <h1>Project plan presentation</h1>
                     
+                    <div className="title">
+                        <h1>705 - Project Plan Presentation</h1>
+                        <div className='breakBar'> </div>
                         <div className="detail">
-                            <span >Due: &nbsp; Aug 23 by&nbsp;11:59pm</span>
-                            <span >Points: &nbsp; 5 </span>
-                            <span >Submitting a file upload</span>
+                            <p ><b>Due</b> &nbsp; Aug 23 by&nbsp;11:59pm</p>
+                            <p ><b>Points </b> &nbsp; 5 </p>
+                            <p ><b>Submitting</b> a file upload</p>
                         </div>
+                        <div className='breakBar'> </div>
                     </div>
                     
                     <div className="description">
@@ -348,8 +349,7 @@ const renderTime = ({ remainingTime }) => {
 
                     <p>Now it is time to submit your assignment! </p>
                     <p>Try to submit the assignment and complete this task as quickly as possible. The timer above will help simulate this pressure. </p>
-                    <p></p>
-                    <p></p>
+
                     <p> The next page will show automatically after the assignment is submitted. </p>
                 </div>
             </div>

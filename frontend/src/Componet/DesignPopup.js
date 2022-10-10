@@ -120,7 +120,6 @@ export default function DesignPopup() {
                     <p>In this page, you can design how the assignment popup modal window will look. </p>
                     <p>Click and drag the buttons within the boxed boundaries to resize and change their position. </p>
                     <p></p>
-                    <p></p>
                     <p>When you are ready, click the "Next Page" button.</p>
                 </div>
 
