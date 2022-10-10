@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { Link } from "react-router-dom";
 import '../Css/Test.css';
 import '.././App.css';
 import Popup from 'reactjs-popup';
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { DataGrid } from '@mui/x-data-grid';
-import FileSelection from './design/DesignFileSelection';
+
 
 //countdown Timer
 const renderTime = ({ remainingTime }) => {
@@ -258,6 +257,7 @@ const renderTime = ({ remainingTime }) => {
                                                         </Box>
                                                         </div> 
                                                     </div>
+                                                    </center>
                                                     <div className="actions">
                                                         <div className="chooseFileArea">
                                                              <button style={choosebuttonstyle}  onClick={close} >Choose file</button>
@@ -266,7 +266,7 @@ const renderTime = ({ remainingTime }) => {
                                                     </div>    
                                                         
 
-                                                    </center>
+                                                 
                                                     
                                                     
                                             </div>

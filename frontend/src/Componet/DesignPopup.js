@@ -203,6 +203,7 @@ export default function DesignPopup() {
                                 </Box>
                                 </div> 
                             </div>
+                            
                             <div className="actions">
                                 <div className="chooseFileArea">
                                     <FileSelection />

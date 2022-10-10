@@ -22,7 +22,7 @@ button {
     width: 50vw;
     height: 15vh;
     border: 2px dashed rgb(184, 183, 183);
-    margin-top: 20px;
+    margin: 20px auto;
 }
 
 .modal {

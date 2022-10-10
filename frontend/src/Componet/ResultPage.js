@@ -47,7 +47,7 @@ export default function ResultPage() {
                     <div className='yourResult'>
                         <h1>Your Result</h1>
                     </div>
-                <XYPlot width={700} height={700} xDomain={[Last10Data[0].x, Last10Data[0].x+9]} yDomain={[0, Math.max.apply(Math, Last10Data.map(function(o) { return o.y; }))]}>
+                <XYPlot width={700} height={700} yDomain={[0, Math.max.apply(Math, Last10Data.map(function(o) { return o.y; }))]}>
                     <VerticalGridLines/>
                     <HorizontalGridLines/>
                     <XAxis title="Design"/>
@@ -59,8 +59,6 @@ export default function ResultPage() {
             <div className="nextpageButton">
                 <Link to="/" style={{color: "white"}}>RETRY</Link>
             </div>
-
-
             <div className="clearButton">
                 <button onClick={handleClearClick} >CLEAR RESULT AND RETRY</button>
             </div>
