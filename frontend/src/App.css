@@ -123,6 +123,7 @@
   width: 100%;
 }
 
+
 .clearButton{
   display:flex;
   align-items: center;
@@ -142,4 +143,9 @@
   position: fixed;
   bottom: 20px;
   right: 80px;
+}
+.breakBar {
+  width: 100%;
+  border-bottom: 1px solid #c7cdd1;
+  margin-bottom: 20px;
 }
