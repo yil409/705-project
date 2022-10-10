@@ -12,6 +12,8 @@ import '.././App.css';
 
 import { styled } from '@mui/material/styles';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function DesignPopup() {
@@ -109,7 +111,19 @@ export default function DesignPopup() {
                     <FileSelection onSubmit={handleSubmit}/>           
                 </Box>
             </center>
-            
+            <div className='instructionsAndPageName'>
+                    <div className="instructionsAndPageNameHeader">
+                        <FontAwesomeIcon icon={faCircleInfo} size="2x"/>
+                        <h3> Design Page</h3>
+                    </div>
+
+                    <p>In this page, you can design how the assignment popup modal window will look. </p>
+                    <p>Click and drag the buttons within the boxed boundaries to resize and change their position. </p>
+                    <p></p>
+                    <p></p>
+                    <p>When you are ready, click the "Next Page" button.</p>
+                </div>
+
             <div className="nextpageButton"> <Link to="/test" style={{color: "white"}}>NEXTPAGE</Link> </div>
         </div>
         

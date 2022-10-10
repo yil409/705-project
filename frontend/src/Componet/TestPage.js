@@ -9,10 +9,12 @@ import Box from "@mui/material/Box";
 import { DataGrid } from '@mui/x-data-grid';
 import FileSelection from './design/DesignFileSelection';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 //countdown Timer
 const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
-      return <div className="timer">Too lale...</div>;
+      return <div className="timer">Too late...</div>;
     }
   
     return (
@@ -313,6 +315,7 @@ const renderTime = ({ remainingTime }) => {
                                     )}
                                 </Popup>
                             </div>
+                            
                             <div className="fileUploadArea" style={{border: "solid 1px transparent"}}>
                                 <button style={submitbuttonstyle}  onClick={handleSubmitClick} >Submit Assignment</button>
                             </div>
@@ -335,6 +338,19 @@ const renderTime = ({ remainingTime }) => {
                             </CountdownCircleTimer>
                         </div>
                     </div>
+                </div>
+
+                <div className='instructionsAndPageName'>
+                    <div className="instructionsAndPageNameHeader">
+                        <FontAwesomeIcon icon={faCircleInfo} size="2x"/>
+                        <h3> Test Page</h3>
+                    </div>
+
+                    <p>Now it is time to submit your assignment! </p>
+                    <p>Try to submit the assignment and complete this task as quickly as possible. The timer above will help simulate this pressure. </p>
+                    <p></p>
+                    <p></p>
+                    <p> The 'Next Page' button will become avaliable after the assignment is submitted. </p>
                 </div>
             </div>
             
