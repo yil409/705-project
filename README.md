@@ -1,6 +1,6 @@
 ## Kanvas
 
-Our project is an assignment submission interface and also allows students to alter the button components present in the UI. There are 3 main parts to this activity: The Design phase, the Testing phase and the Results evaluation.
+Our project is an assignment submission interface which also allows students to alter the button components present in the UI. There are 3 main parts to this activity: The Design phase, the Testing phase and the Results evaluation.
 
 This app is situated in the context of Canvas. We are assuming that you have previous experience uploading assignments to Canvas and that you are generally familiar with this process. This app will allow you to experiment with the UI of this and to investigate how Fitts' Law can be applied.
 
