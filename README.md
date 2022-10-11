@@ -19,9 +19,7 @@ Open [localhost:3000](https://localhost:3000) to view the project.
 ## Screenshot
 
 ![Screenshot](./frontend/public/Startpage.png)
-![Screenshot](./frontend/public/Designpage2.png)
+![Screenshot](./frontend/public/Designpage.png)
 ![Screenshot](./frontend/public/Designpage3.png)
-![Screenshot](./frontend/public/Testpage1.png)
 ![Screenshot](./frontend/public/Testpage2.png)
-![Screenshot](./frontend/public/Testpage3.png)
-![Screenshot](./frontend/public/Resultpage.png)
+![Screenshot](./frontend/public/Resultpage.PNG)
