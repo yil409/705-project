@@ -1,4 +1,4 @@
-## Kanvas
+## Kanvas (Github repository link: https://github.com/yil409/705-project.git)
 
 Our project is an assignment submission interface which also allows students to alter the button components present in the UI. There are 3 main parts to this activity: The Design phase, the Testing phase and the Results evaluation.
 
@@ -15,8 +15,8 @@ Finally, during the Results evaluation, you will be able to see the time it took
 
 ## Run this project on your local machine
 
-To run this project, first you need to download the repo to your local machine and open it in your code editor.(https://github.com/yil409/705-project.git)
-Then run following commands in your terminal to install the dependencies and start the frontendend:
+To run this project, first you need to download the repo to your local machine and open it in your code editor.
+Then run following commands in your terminal to install the dependencies and start the frontend:
 
 ```
 cd frontend
