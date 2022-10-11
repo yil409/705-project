@@ -33,7 +33,7 @@ export default function ResultPage() {
                 <div className="table">
                     <table>
                         <tr>
-                            <th>Attemp</th>
+                            <th>Attempt</th>
                             <th>Time</th>
                         </tr>
                         {Last10Data.map((val, key) => {
